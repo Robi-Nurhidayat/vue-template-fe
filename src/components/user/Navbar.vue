@@ -26,7 +26,7 @@ const logout = () => {
   }
 }
 
-console.log(store.state.role)
+
 </script>
 
 

@@ -13,7 +13,8 @@ const data = reactive({
 
 const user = reactive({
     name: "",
-    role: ""
+    role: "",
+    access_token: ""
 })
 
 const store = useUserStore();
@@ -29,12 +30,12 @@ const onSubmit = async () => {
             password: data.password
         })
 
-        console.log(response.data)
 
         if (response.data.data) {
 
             user.name = response.data.data.name
             user.role = response.data.data.role
+            user.access_token = response.data.access_token;
 
             store.updateName(user)
             if (response.data.data.role == "user") {
